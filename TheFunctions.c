@@ -18,3 +18,6 @@ int OpenFile_Check(FILE *InputFile)
 	}
 }
 
+
+void WriteToFile(FILE *OutputFile, TheMemory Memory)
+{

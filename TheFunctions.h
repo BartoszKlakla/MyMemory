@@ -17,6 +17,7 @@ typedef struct TheCodedMemory
 {
 	unsigned char *NameTable;
 	char InputBuffer[MAX_BUFFER];
+	int CodedMemory[MAX_BUFFER];
 } TheMemory;
 
 /* *The functions used to connect with memory file* */
@@ -30,5 +31,14 @@ int OpenFile_Check(FILE *InputFile);
  *Parameter:	InputFile - pointer to the file
  *Parameter:	Memory - structure with fields of the memory that have to be put*/
 void WriteToFile(FILE *InputFile, TheMemory Memory);
+
+/*Function:		ConvertToBinary - converts the string to series of binary values
+ *Parameter:	GivenString - The table consists of the characters putted into memory
+ *Parameter:	Memory - structure with saved values of memory*/
+void ConvertToBinary(char GivenString[MAX_BUFFER], TheMemory Memory);
+
+/*Function:		GatherString - ask for and gathers the string from user
+ *Parameter:	Memory - structure to write the memory to*/
+void GatherString(TheMemory Memory);
 
 #endif
